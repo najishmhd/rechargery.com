@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   def require_login
     if(!current_user)
       return_to = request.env['PATH_INFO']
-      flash[:alert] = "You aren't signed in. Log in below, or create an acount."
+      flash[:alert] = "You are not signed in.Please log in below, or create an acount."
       redirect_to(new_login_path(:return_to=>return_to))
       return true
     else
