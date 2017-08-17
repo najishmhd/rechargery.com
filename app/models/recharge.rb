@@ -1,7 +1,7 @@
 class Recharge < ActiveRecord::Base
 	belongs_to :order
 
-	validates_presence_of(:order,:message => "This recharge doesn't belong to a order!")
+	validates_presence_of(:order,:message => "This recharge does not belong to a order!")
 	validates_presence_of(:phonenumber, :message => "You haven't entered a mobile number")
 	validates_length_of(:phonenumber, :is => 10,:message => "Phone number should be only 10 digits long")
 	validates_numericality_of(:phonenumber,:message => "Phone number should only contain digits 0-9")
